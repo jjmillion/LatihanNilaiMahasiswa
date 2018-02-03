@@ -50,12 +50,15 @@ public class TestNilai {
         for (NilaiTerm score : daftarNilai) {
             System.out.printf("%s %n", score.getSiswa());
             System.out.println("===================================================================================");
-            System.out.println("Mata Kuliah\t\t\tNilai Angka\t\t\tNilai Huruf");
+            System.out.printf("%15s %30s %30s %n", "Mata Kuliah" , "Nilai Angka", "Nilai Huruf");
+            //System.out.println("Mata Kuliah\t\t\tNilai Angka\t\t\tNilai Huruf");
             System.out.println("===================================================================================");
             for (Entry<String, Integer> e : score.getNilai().entrySet()) {
                 String mp = e.getKey();
                 Integer np = e.getValue();
-                System.out.println(mp + "\t\t\t" + np + "\t\t\t\t" + (np >= 80 ? "A" : np >= 70 ? "B" : np >= 60 ? "C" : np >= 50 ? "D" : "E"));
+                String code = (np >= 80 ? "A" : np >= 70 ? "B" : np >= 60 ? "C" : np >= 50 ? "D" : "E");
+                //System.out.println(mp + "\t\t\t" + np + "\t\t\t\t" + (np >= 80 ? "A" : np >= 70 ? "B" : np >= 60 ? "C" : np >= 50 ? "D" : "E"));
+                System.out.printf("%21s %20s %30s %n", mp , np, code);
             }
         }
     }
